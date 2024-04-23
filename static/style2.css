@@ -1,0 +1,713 @@
+@charset "UTF-8"; /*! non_critical_begin */
+.ac-fullscreen {
+    overflow: hidden
+}
+
+.autocomplete-suggestions {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-top: 0;
+    box-shadow: -1px 1px 3px rgba(0,0,0,.1);
+    box-sizing: border-box;
+    cursor: default;
+    display: none;
+    max-height: 500px;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    text-align: left;
+    transition: top .2s ease;
+    z-index: 9999
+}
+
+.autocomplete-suggestion {
+    color: #333;
+    cursor: pointer;
+    line-height: 25px;
+    overflow: hidden;
+    padding: 5px;
+    position: relative;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.autocomplete-suggestion b {
+    color: #1f8dd6;
+    font-weight: 400
+}
+
+.autocomplete-suggestion.selected {
+    background: #f0f0f0
+}
+
+.autocomplete-container {
+    position: relative;
+    width: 100%
+}
+
+.autocomplete-box {
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(0,0,0,.3);
+    position: absolute;
+    width: 100%
+}
+
+.autocomplete-fullscreen {
+    border: 0;
+    height: 100%;
+    left: 0!important;
+    padding: 1rem;
+    position: fixed;
+    top: 100px!important;
+    width: 100%!important;
+    z-index: 1000000000
+}
+
+.autocomplete-fullscreen .autocomplete-suggestion {
+    font-size: 1rem
+}
+
+.autocomplete-fullscreen-input {
+    background: #fff;
+    height: 100%;
+    left: 0;
+    padding-top: 25px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100000
+}
+
+.autocomplete-close-btn {
+    border-radius: 50%;
+    cursor: pointer;
+    float: right;
+    font-size: 2rem;
+    font-weight: 700;
+    height: 2rem;
+    line-height: 1;
+    opacity: .5;
+    position: absolute;
+    right: 5px;
+    text-align: center;
+    top: 5px;
+    width: 2rem
+}
+
+/*! non_critical_end */
+.accordion-control>section>.accordion-tab,amp-accordion>section>.accordion-tab {
+    background: #eee;
+    font-weight: 400;
+    padding: .5rem;
+    position: relative
+}
+
+.accordion-control>section>.accordion-content,amp-accordion>section>.accordion-content {
+    padding: .5rem
+}
+
+.accordion-control>section>.accordion-tab:after,amp-accordion>section>.accordion-tab:after {
+    content: "❯";
+    display: block;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .4s;
+    transition-property: top,transform
+}
+
+.accordion-control>section>[aria-expanded=true]:after,amp-accordion>section>[aria-expanded=true]:after {
+    top: 25%;
+    transform: rotate(90deg)
+}
+
+.nav-tabs {
+    border-bottom: 3px solid #ededed
+}
+
+.nav-tabs>li>a {
+    border: 2px solid transparent;
+    border-width: 2px 0;
+    color: #000;
+    font-weight: 400;
+    text-align: center
+}
+
+.nav-tabs>li>.active {
+    font-weight: 700
+}
+
+.nav-tabs>li>.active:before {
+    transform: scale(1);
+    transition: transform .2s ease
+}
+
+.nav-tabs>li>a:before {
+    background: #ffc107;
+    bottom: -3px;
+    content: "";
+    height: 3px;
+    left: 0;
+    position: absolute;
+    transform: scale(0);
+    width: 100%
+}
+
+.nav-tab-container {
+    height: 60px;
+    width: 100%
+}
+
+.nav-tabs {
+    padding: 0
+}
+
+.nav-tabs>li {
+    display: inline-block;
+    min-width: 115px;
+    position: relative;
+    white-space: normal
+}
+
+@media (max-width: 360px) {
+    .nav-tabs {
+        font-size:14px
+    }
+
+    .nav-tabs>li {
+        min-width: 100px
+    }
+}
+
+.astrology-related-reports .report-offer-tag {
+    background: #ffc107;
+    color: #000;
+    font-size: .9rem;
+    font-weight: 700;
+    left: -20%;
+    min-width: 135px;
+    padding: 17px 3px 1px;
+    position: absolute;
+    text-align: center;
+    text-transform: capitalize;
+    top: -10px;
+    transform: rotate(-45deg);
+    z-index: 1
+}
+
+.astrology-related-reports .report-price {
+    background: rgba(255,4,3,.8);
+    border: 1px solid #fff;
+    border-radius: var(--border-radius);
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 700;
+    left: 50%;
+    min-width: 120px;
+    position: absolute;
+    text-align: center;
+    top: 75%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 1
+}
+
+.astrology-related-reports .strike-text {
+    text-decoration: line-through
+}
+
+.astrology-related-reports .list-item.report-new {
+    position: relative
+}
+
+.astrology-related-reports .list-item.report-new:before {
+    background: rgba(255,4,3,.8);
+    color: #fff;
+    content: "NEW";
+    font-weight: 700;
+    margin: auto;
+    position: absolute;
+    right: -40px;
+    text-align: center;
+    top: 15px;
+    transform: rotate(45deg);
+    width: 130px;
+    z-index: 100
+}
+
+.astrology-related-reports .list-item-image {
+    position: relative
+}
+
+.astrology-related-reports .list-item.report-new:before {
+    animation: blinkingWhiteText .5s infinite
+}
+
+@keyframes blinkingWhiteText {
+    0% {
+        color: #fff
+    }
+
+    49% {
+        color: #fff
+    }
+
+    60% {
+        color: transparent
+    }
+
+    99% {
+        color: transparent
+    }
+
+    to {
+        color: #fff
+    }
+}
+
+.report-tab-content-detail {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.report-tab-content-detail .icon-rounded {
+    border-radius: 50%;
+    font-size: 1rem;
+    height: 1.25rem;
+    line-height: 1.25rem;
+    width: 1.25rem
+}
+
+.strike-text {
+    text-decoration: line-through
+}
+
+.floating-button {
+    background: #fff;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    position: -webkit-sticky
+}
+
+.floating-bottom-right {
+    bottom: 0;
+    padding: .5rem 0 .5rem .5rem;
+    right: 0;
+    z-index: 100
+}
+
+.floating-bottom-right .dropdown-menu {
+    margin-right: .5rem
+}
+
+.astrology-slider-cards-wrapper {
+    margin-top: 1.25rem;
+    width: 100%
+}
+
+.astrology-slider-cards>div {
+    text-align: center
+}
+
+.astrology-slider-cards>div>a>.caption {
+    color: #000;
+    display: block;
+    font-size: .75rem;
+    text-align: center
+}
+
+@media (max-width: 1270px) {
+    .astrology-slider-cards-wrapper {
+        margin-bottom:.75rem;
+        overflow-x: auto;
+        overflow-y: hidden
+    }
+
+    .astrology-slider-cards {
+        min-width: 1280px
+    }
+}
+
+.astrology-slider-card-picture>img {
+    border-radius: 50%;
+    height: 57.5px;
+    width: 57.5px
+}
+
+@media (min-width: 960px) {
+    .astrology-slider-card-picture>img {
+        height:69px;
+        width: 69px
+    }
+}
+
+@media (max-width: 960px) {
+    .astrology-slider-cards {
+        min-width:980px
+    }
+}
+
+.transit-prediction-list .fix-width {
+    align-items: center;
+    background-image: url("https://s0.nxstatic.com/static/astrology/assets/img/header/moon-transit.png?_=68d1bac2");
+    border-radius: 50%;
+    height: 100px;
+    margin-right: 10px;
+    min-width: 100px;
+    padding-right: 1rem;
+    width: 15%
+}
+
+.transit-prediction-list>li {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    list-style-type: none;
+    position: relative
+}
+
+.transit-prediction-list .transit-prediction {
+    width: 85%
+}
+
+.transit-prediction-ashtakavarga-chart {
+    width: 300px
+}
+
+.autocomplete-suggestion {
+    border-bottom: 1px solid #eee;
+    font-size: .75rem
+}
+
+.form-astro {
+    font-family: var(--font-family-regional),var(--font-family-regional-fallback),Segoe UI,system-ui,-apple-system,sans-serif;
+    margin-bottom: 1rem
+}
+
+@media (min-width: 720px) {
+    .form-astro {
+        padding-left:5em;
+        padding-right: 5em
+    }
+}
+
+.form-controls-list>li {
+    width: 33.33%
+}
+
+.form-astro-inner .control-label,.location-group-wrapper .control-label {
+    font-size: 1rem;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-east-asian: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    line-height: normal
+}
+
+.toggle-body {
+    margin-bottom: .5rem
+}
+
+.toggle-label {
+    background-color: #f5f5f5;
+    border: 2px solid #eee;
+    border-radius: 2px;
+    color: #333;
+    cursor: pointer;
+    display: block;
+    margin-bottom: 0;
+    padding: 10px
+}
+
+.toggle-label:before {
+    color: #333;
+    content: "+";
+    display: inline-block;
+    font-weight: 700;
+    text-align: center;
+    width: 1em
+}
+
+.toggle-input,.toggle-input:not(:checked)~.toggle-content {
+    display: none
+}
+
+.toggle-input:checked~.toggle-content {
+    display: block;
+    padding-top: 10px
+}
+
+.toggle-input:checked~.toggle-label:before {
+    content: "-"
+}
+
+.read-more-state,.read-more-state:checked+.read-more-wrap>.show-more,.read-more-target,.read-more-wrap>.show-less {
+    display: none
+}
+
+.read-more-state:checked+.read-more-wrap>.read-more-target,.read-more-state:checked+.read-more-wrap>.show-less {
+    display: inline
+}
+
+.read-more-wrap>.show-more:after {
+    content: "Show more";
+    text-decoration: underline
+}
+
+.read-more-state:checked+.read-more-wrap>.show-less:after {
+    content: "Show less"
+}
+
+.read-more-trigger {
+    color: #666;
+    cursor: pointer;
+    display: inline
+}
+
+.location-selected img {
+    vertical-align: initial
+}
+
+.date-time .form-group {
+    margin-bottom: 0
+}
+
+.form-bg-yellow-lite>form {
+    background-color: #f0e4bc
+}
+
+.form-bg-yellow-dark>form {
+    background-color: #ffb900
+}
+
+.form-bg-orange-lite>form {
+    background-color: #ffe8c8
+}
+
+.form-sm .control-label,.porutham-form-wrapper .control-label {
+    font-size: 1rem;
+    margin: 0;
+    padding: 0
+}
+
+.form-sm .form-heading,.porutham-form-wrapper .form-heading {
+    margin-bottom: 0;
+    padding: .6rem
+}
+
+@media (min-width: 530px) {
+    .form-sm {
+        margin:10px auto;
+        max-width: 528px
+    }
+
+    .form-sm>fieldset,.porutham-form-wrapper>fieldset {
+        padding: 1.5rem
+    }
+}
+
+.form-sm>form {
+    padding: 1rem 2rem
+}
+
+.separator {
+    display: block;
+    height: 1px;
+    margin: 1rem 0;
+    position: relative;
+    width: 100%
+}
+
+.separator:after,.separator:before {
+    bottom: -1px;
+    content: "";
+    left: 50%;
+    position: absolute
+}
+
+.separator:before {
+    border-color: #ccc;
+    border-color: rgba(0,0,0,.2) rgba(0,0,0,.05) rgba(0,0,0,.05) rgba(0,0,0,.2);
+    border-style: solid;
+    border-width: 1px;
+    height: 2px;
+    left: 0;
+    width: 100%
+}
+
+@media (min-width: 720px) {
+    .calculator-result .separator {
+        display:block;
+        right: auto;
+        width: 0
+    }
+
+    .calculator-result .separator,.separator {
+        height: 100%;
+        left: 50%;
+        margin: 0;
+        position: absolute
+    }
+
+    .separator {
+        width: auto
+    }
+
+    .separator:after,.separator:before {
+        left: auto;
+        top: 50%
+    }
+
+    .separator:before {
+        height: 100%;
+        transform: translateY(-50%);
+        width: 2px
+    }
+
+    .girl-details fieldset {
+        padding-right: 35px
+    }
+
+    .boy-details fieldset {
+        padding-left: 35px
+    }
+
+    .separator:after {
+        height: 2.2rem
+    }
+}
+
+.porutham-calculator .grid-col {
+    position: relative
+}
+
+.jathaka-form {
+    padding: 1rem
+}
+
+.align-center {
+    margin: 0 auto
+}
+
+.astro-link-wrapper {
+    border-left: 1px solid #e1e1e1;
+    border-top: 1px solid #e1e1e1;
+    list-style: none;
+    padding: 0;
+    width: 100%
+}
+
+.astro-link-wrapper>li {
+    border-bottom: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+    box-sizing: border-box;
+    float: left;
+    margin: 0;
+    text-align: center
+}
+
+.astro-thumbnail {
+    display: block;
+    margin: 0 auto;
+    width: 104px
+}
+
+.astro-link-column {
+    align-items: center;
+    display: block;
+    display: flex;
+    height: 180px;
+    justify-content: center;
+    padding: 15px
+}
+
+.astro-caption {
+    color: #000;
+    display: block;
+    font-size: 1rem;
+    line-height: 1;
+    margin-top: 4px
+}
+
+@media (min-width: 420px) {
+    .astro-link-column {
+        height:200px
+    }
+}
+
+.related-list-group-left-icon .icon-rounded {
+    border-radius: 50%;
+    font-size: .875rem;
+    height: 1.425em;
+    line-height: 1.425em;
+    width: 1.425em
+}
+
+.personalized-astro-form .form-astro {
+    background-color: #f0e4bc;
+    margin-bottom: .5rem
+}
+
+.link-more-options {
+    display: flex;
+    margin: 0 -.5rem .25rem
+}
+
+.link-more-options>span {
+    border-right: 1px solid #c5c5c5;
+    padding-left: 8px;
+    padding-right: 8px;
+    white-space: nowrap
+}
+
+.link-more-options>span:last-child {
+    border-right: none
+}
+
+.link-more-options>span:last-child .dropdown-toggle:after {
+    display: none
+}
+
+.astrologer-list-slider {
+    --list-item-title-line-clamp: 1
+}
+
+.has-invalid-input .invalid-feedback {
+    display: block
+}
+
+.sticky-shadow-box {
+    background: #fff;
+    bottom: 0;
+    box-shadow: 0 -4px 3px rgba(0,0,0,.1);
+    padding: .25rem;
+    position: sticky;
+    z-index: 100
+}
+
+.tr-heading-orange {
+    background: #ff9800;
+    color: #000
+}
+
+.text-transform-none {
+    text-transform: none
+}
+
+.text-declaimer {
+    background: #eee;
+    border: #ffdead;
+    font-size: 14px;
+    padding: 15px
+}
+
+/*# sourceMappingURL=https://sourcemap.prokerala.com/static/astrology/assets/css/unity.min.css.map?_=c111beb4 */

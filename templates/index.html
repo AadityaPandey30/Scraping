@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scraped Content</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="../static/style.css" />
+    <link rel="stylesheet" href="../static/style2.css" />
+  </head>
+  <body>
+    <div id="scraped-content">{{ scraped_content | safe }}</div>
+    <script>
+      $(document).ready(function () {
+        // Capture button click
+        $("#btn-past-life").click(function (event) {
+          // Prevent the default form submission behavior
+          event.preventDefault();
+          console.log("clicked");
+
+          // Trigger the Flask route to activate the Selenium bot
+          $.ajax({
+            type: "POST",
+            url: "/get_past_life",
+            data: {
+              birth_year: $("#fin_year").val(),
+              birth_month: $("#fin_month").val(),
+              birth_day: $("#fin_day").val(),
+            },
+            success: function (response) {
+              // Display the response (if needed)
+              console.log(response);
+            },
+            error: function () {
+              console.log("An error occurred. Please try again.");
+            },
+          });
+        });
+
+        // Prevent default form submission when "Know Your Past Life" button is clicked
+        $("#btn-past-life").click(function (event) {
+          event.preventDefault();
+        });
+      });
+    </script>
+  </body>
+</html>
