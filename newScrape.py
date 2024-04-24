@@ -1,8 +1,18 @@
+import sqlite3
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+from datetime import datetime
+
+# Initialize SQLite database connection
+conn = sqlite3.connect('past_life_results.db')
+c = conn.cursor()
+
+# Create a table to store past life results
+c.execute('''CREATE TABLE IF NOT EXISTS past_life_results
+             (id INTEGER PRIMARY KEY, date TEXT, prediction TEXT)''')
 
 def test_past_life(year, month, day):
     # Initialize Selenium WebDriver
@@ -38,10 +48,22 @@ def test_past_life(year, month, day):
         # Close the browser window
         driver.quit()
 
-# Example usage
-year = "1990"
-month = "May"
-day = "15"
+# Iterate over all combinations of years, months, and days
+for year in range(1955, 2025):
+    for month_num in range(1, 13):
+        month_name = datetime.strptime(str(month_num), "%m").strftime("%B")
+        for day in range(1, 30):
+            try:
+                result = test_past_life(str(year), month_name, str(day))
+                print("Result:", result)
 
-result = test_past_life(year, month, day)
-print("Result:", result)
+                # Store the result in the database
+                date_str = f"{year}-{month_name}-{day}"
+                c.execute("INSERT INTO past_life_results (date, prediction) VALUES (?, ?)",
+                          (date_str, result))
+                conn.commit()
+            except Exception as e:
+                print(f"An error occurred for date {year}-{month_name}-{day}: {str(e)}")
+
+# Close the database connection
+conn.close()
